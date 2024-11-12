@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="\">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<div class="col-md-3 py-3 py-md-0">
+    <div class="card" th:each="product : ${products}">
+        <img th:src="@{'/images/' + ${product.imageFilename}}" alt="..." >
+        <div class="card-body">
+            <h3 th:text = "${product.name}" class="text-center"> </h3>
+            <p class="text-center" th:text = "${product.brand}"></p>
+            <p class="text-center" th:text = "${product.description}"></p>
+            <div class="star text-center">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+            </div>
+            <h2 th:text = "@{${product.price} + '$'}"> <span><li class="fa-solid fa-cart-shopping"></li></span></h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>
